@@ -22,59 +22,46 @@ const ParticleBackground = () => {
             loaded={particlesLoaded}
             options={{
                 background: {
-                color: {
-                    value: "#0d47a1",
-                },
-                },
-                fpsLimit: 120,
-                interactivity: {
-                events: {
-                    onClick: {
-                    enable: true,
-                    mode: "push",
+                    color: {
+                        value: "#000",
                     },
-                    onHover: {
-                    enable: true,
-                    mode: "repulse",
                     },
-                    resize: true,
-                },
-                modes: {
-                    push: {
-                    quantity: 4,
+                    fpsLimit: 120,
+                    interactivity: {
+                    events: {
+                        onClick: {
+                        enable: false,
+                        mode: "push",
+                        },
+                        onHover: {
+                        enable: false,
+                        mode: "repulse",
+                        },
+                        resize: true,
                     },
-                    repulse: {
-                    distance: 50,
-                    duration: 0.4,
+                    modes: {
+                        push: {
+                        quantity: 4,
+                        },
+                        repulse: {
+                        distance: 25,
+                        duration: 1,
+                        },
                     },
-                },
                 },
                 particles: {
                 color: {
-                    value: "#ffffff",
-                },
-                links: {
-                    color: "#ffffff",
-                    distance: 150,
-                    enable: true,
-                    opacity: 0.5,
-                    width: 1,
-                },
-                collisions: {
-                    enable: true,
+                    value: "#fff",
                 },
                 move: {
-                    directions: "none",
-                    distance:{
-                        horizontal: 30,
-                        vertical: 30
-                    },
+                    directions: "random",
+                    distance: 150,
                     enable: true,
                     outModes: {
-                    default: "destroy",
+                    default: "out",
                     },
-                    random: true,
-                    speed: 6,
+                    random: false,
+                    speed: 0.1,
                     straight: false,
                 },
                 number: {
@@ -82,16 +69,23 @@ const ParticleBackground = () => {
                     enable: true,
                     area: 800,
                     },
-                    value: 20,
+                    value: 150,
                 },
                 opacity: {
-                    value: 0.5,
+                    anim: { enable: true, opacity_min: 0.3, speed: 5, sync: false },
+                    random: {
+                        enable: true,
+                        minimumValue: 0.3
+                    }},
+                twinkle: {
+                    enable: true, 
+                    Frequency: 0.1
                 },
                 shape: {
-                    type: "circle",
+                    type: "star",
                 },
                 size: {
-                    value: { min: 1, max: 5 },
+                    value: { min: 1, max: 3 },
                 },
                 },
                 detectRetina: true,
